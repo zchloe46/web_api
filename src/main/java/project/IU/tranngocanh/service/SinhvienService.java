@@ -46,7 +46,7 @@ public class SinhvienService {
         sinhVienRepository.deleteById(id);
     }
 
-    public SinhVien updateSinhVien(String id, SinhVienCreateRequest sinhVienCreateRequest) {
+    public void updateSinhVien(String id, SinhVienCreateRequest sinhVienCreateRequest) {
         SinhVien sv = getSinhVienById(id);
         sv.setHoTen(sinhVienCreateRequest.getHoTen());
         sv.setNamSinh(sinhVienCreateRequest.getNamSinh());
@@ -55,6 +55,6 @@ public class SinhvienService {
         sv.setKhoa(sinhVienCreateRequest.getKhoa());
         sv.setLop(sinhVienCreateRequest.getLop());
         sv.setHinhAnh(sinhVienCreateRequest.getHinhAnh());
-        return sinhVienRepository.save(sv);
+        sinhVienRepository.save(sv);
     }
 }

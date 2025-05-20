@@ -23,17 +23,17 @@ public class SinhvienCtrl {
         return sinhVienService.getAllSinhVien();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public SinhVien getSinhVienById(@PathVariable String id) {
         return sinhVienService.getSinhVienById(id);
     }
 
-    @GetMapping("/{lop}")
+    @GetMapping("/lop/{lop}")
     public List<SinhVien> getSinhVienByLop(@PathVariable String lop) {
         return sinhVienService.getSinhVienByLop(lop);
     }
 
-    @GetMapping("/{hoten}")
+    @GetMapping("/hoten/{hoten}")
     public List<SinhVien> getSinhVienByHoten(@PathVariable String hoten) {
         return sinhVienService.getSinhVienByHoten(hoten);
     }
