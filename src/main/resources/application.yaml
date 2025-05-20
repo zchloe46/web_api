@@ -1,12 +1,17 @@
+# port server
+server:
+  port: 5005
+  servlet:
+    context-path: /admin
+
 spring:
   application:
     name: tranngocanh
-
+  # MySQL database configuration
   datasource:
     url: jdbc:mysql://localhost:3306/identity_tranngocanh?useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password:
-
   # Hibernate properties
   jpa:
     hibernate:
@@ -17,10 +22,6 @@ spring:
         show_sql: true
         format_sql: true
 
-# port server
-server:
-  port: 5005
-  servlet:
-    context-path: /admin
+
 
 

@@ -5,12 +5,7 @@ package project.IU.tranngocanh.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import project.IU.tranngocanh.dto.sinhvien.SinhVienCreateRequest;
 import project.IU.tranngocanh.entity.SinhVien;
@@ -28,6 +23,11 @@ public class SinhvienCtrl {
         return sinhVienService.getAllSinhVien();
     }
 
+    @GetMapping("/{id}")
+    public SinhVien getSinhVienById(@PathVariable String id) {
+        return sinhVienService.getSinhVienById(id);
+    }
+
     @GetMapping("/{lop}")
     public List<SinhVien> getSinhVienByLop(@PathVariable String lop) {
         return sinhVienService.getSinhVienByLop(lop);
@@ -39,7 +39,20 @@ public class SinhvienCtrl {
     }
 
     @PostMapping
-    public SinhVien creatSinhVien(@RequestBody SinhVienCreateRequest sinhVienCreateRequest) {
+    public SinhVien createSinhVien(@RequestBody SinhVienCreateRequest sinhVienCreateRequest) {
         return sinhVienService.themSinhVien(sinhVienCreateRequest);
     }
+
+    @DeleteMapping("/{id}")
+    public String deleteSinhVien(@PathVariable String id) {
+        sinhVienService.deleteSinhVien(id);
+        return "Delete sinh vien successfully";
+    }
+
+    @PutMapping("/{id}")
+    public String updateSinhVien(@PathVariable String id, @RequestBody SinhVienCreateRequest sinhVienCreateRequest) {
+        sinhVienService.updateSinhVien(id, sinhVienCreateRequest);
+        return "Update sinh vien successfully";
+    }
+
 }

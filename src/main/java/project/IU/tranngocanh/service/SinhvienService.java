@@ -18,6 +18,10 @@ public class SinhvienService {
         return sinhVienRepository.findAll();
     }
 
+    public SinhVien getSinhVienById(String id) {
+        return sinhVienRepository.findById(id).get();
+    }
+
     public List<SinhVien> getSinhVienByLop(String lop) {
         return sinhVienRepository.findByLop(lop);
     }
@@ -28,6 +32,22 @@ public class SinhvienService {
 
     public SinhVien themSinhVien(SinhVienCreateRequest sinhVienCreateRequest) {
         SinhVien sv = new SinhVien();
+        sv.setHoTen(sinhVienCreateRequest.getHoTen());
+        sv.setNamSinh(sinhVienCreateRequest.getNamSinh());
+        sv.setDiaChi(sinhVienCreateRequest.getDiaChi());
+        sv.setDienThoai(sinhVienCreateRequest.getDienThoai());
+        sv.setKhoa(sinhVienCreateRequest.getKhoa());
+        sv.setLop(sinhVienCreateRequest.getLop());
+        sv.setHinhAnh(sinhVienCreateRequest.getHinhAnh());
+        return sinhVienRepository.save(sv);
+    }
+
+    public void deleteSinhVien(String id) {
+        sinhVienRepository.deleteById(id);
+    }
+
+    public SinhVien updateSinhVien(String id, SinhVienCreateRequest sinhVienCreateRequest) {
+        SinhVien sv = getSinhVienById(id);
         sv.setHoTen(sinhVienCreateRequest.getHoTen());
         sv.setNamSinh(sinhVienCreateRequest.getNamSinh());
         sv.setDiaChi(sinhVienCreateRequest.getDiaChi());
