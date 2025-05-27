@@ -1,20 +1,18 @@
 package project.IU.tranngocanh.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
 
 @Data
 @Entity
-public class Sanpham {
+public class Dienthoai {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    private String tenSanPham;
+    private String tenDienThoai;
     private String hangSanXuat;
-    private String namSanXuat;
-    private float gia;
+    private int soLuong;
+    private float donGia;
     private String hinhAnh;
-
-
 }

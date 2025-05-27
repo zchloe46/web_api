@@ -1,20 +1,10 @@
 package project.IU.tranngocanh.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@Data
 @Entity
-@Setter
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(
-        name = "user",
-        schema = "identity_tranngocanh"
-)
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

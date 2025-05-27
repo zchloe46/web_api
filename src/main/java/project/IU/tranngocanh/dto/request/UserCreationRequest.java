@@ -1,10 +1,10 @@
 package project.IU.tranngocanh.dto.request;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Setter
-@Getter
+@Data
 public class UserCreationRequest {
     private String userName;
     private String email;

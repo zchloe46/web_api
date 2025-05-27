@@ -1,12 +1,12 @@
 package project.IU.tranngocanh.dto.sinhvien;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Date;
 
-@Getter
-@Setter
+@Data
 public class SinhVienUpdateRequest {
     private String hoTen;
     private Date namSinh;

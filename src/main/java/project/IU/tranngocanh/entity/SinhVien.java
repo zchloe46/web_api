@@ -7,20 +7,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@Data
 @Entity
-@Setter
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(
-        name = "sinhvien",
-        schema = "identity_tranngocanh"
-)
 public class SinhVien {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
