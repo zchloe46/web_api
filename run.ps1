@@ -1,4 +1,5 @@
-git clone https://github.com/zchloe46/web_api.git
+git pull origin main --rebase
+
 git add .
 git commit -m "updatejher"
 git push origin main --force
