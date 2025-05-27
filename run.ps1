@@ -1,4 +1,4 @@
-
+git git pull origin main --rebase
 git add .
 git commit -m "updatejher"
 git push origin main --force
