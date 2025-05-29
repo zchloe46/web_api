@@ -23,9 +23,10 @@ public class SanphamCtrl {
         return spService.createSanpham(sp);
     }
 
-    @DeleteMapping
-    public Sanpham delete(@PathVariable String id) {
-        return spService.deleteSanpham(id);
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable String id) {
+        spService.deleteSanpham(id);
+        return "Delete san pham successfully";
     }
 
     @PutMapping("/{id}")

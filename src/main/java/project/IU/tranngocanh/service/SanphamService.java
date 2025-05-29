@@ -28,7 +28,6 @@ public class SanphamService {
     }
 
     public Sanpham updateSanpham(String id, Sanpham sanpham) {
-        // lay sanpham theo id
         Sanpham sp = spRepo.findById(id).get();
 
         if(sp == null) {
@@ -46,15 +45,8 @@ public class SanphamService {
         return spRepo.save(sp);
     }
     // viet phuong thuc xoa san pham
-    public Sanpham deleteSanpham(String id) {
+    public void deleteSanpham(String id) {
         Sanpham sanpham = spRepo.findById(id).get();
-
-        if(sanpham == null) {
-            System.out.println("khong tim thay san pham");
-        } else {
-            spRepo.delete(sanpham);
-            System.out.println("da xoa san pham");
-        }
-        return sanpham;
+        spRepo.delete(sanpham);
     }
 }
