@@ -26,6 +26,10 @@ public class DienthoaiService {
         return dtRepo.findById(id).get();
     }
 
+    public List<Dienthoai> getDtByDonGiaLessThanEqual(double donGia) {
+        return dtRepo.findByDonGiaLessThanEqual(donGia);
+    }
+
     public Dienthoai createDt(DienthoaiCreationRequest dtCreate) {
         Dienthoai dt = new Dienthoai();
         dt.setTenDienThoai(dtCreate.getTenDienThoai());
@@ -45,7 +49,6 @@ public class DienthoaiService {
         dt.setSoLuong(dtUpdate.getSoLuong());
         return dtRepo.save(dt);
     }
-
 
 
     public void deleteDt(String id) {

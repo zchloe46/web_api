@@ -10,4 +10,9 @@ import java.util.List;
 public interface DienthoaiRepository extends JpaRepository<Dienthoai, String> {
     @Query("SELECT d FROM Dienthoai d WHERE LOWER(d.tenDienThoai) LIKE LOWER(CONCAT('%', :tenDienThoai, '%'))")
     List<Dienthoai> findByTenDienThoai(@Param("tenDienThoai") String tenDienThoai);
+
+    @Query("SELECT d FROM Dienthoai d WHERE d.donGia <= :donGia")
+    List<Dienthoai> findByDonGiaLessThanEqual(@Param("donGia") Double donGia);
+
+
 }

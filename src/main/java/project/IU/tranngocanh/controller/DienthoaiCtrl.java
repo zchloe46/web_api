@@ -25,6 +25,11 @@ public class DienthoaiCtrl {
         return dtSer.getDtByTen(tenDienThoai);
     }
 
+    @GetMapping("/dongia/{donGia}")
+    public List<Dienthoai> getDtByDonGiaLessThanEqual(@PathVariable double donGia) {
+        return dtSer.getDtByDonGiaLessThanEqual(donGia);
+    }
+
     @PostMapping
     public Dienthoai addDt(@RequestBody DienthoaiCreationRequest dt) {
         return dtSer.createDt(dt);
