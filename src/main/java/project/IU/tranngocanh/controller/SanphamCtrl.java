@@ -24,9 +24,13 @@ public class SanphamCtrl {
     }
 
     @DeleteMapping
-    public Sanpham delete(@RequestBody Sanpham sp) {
-        return spService.deleteSanpham();
+    public Sanpham delete(@PathVariable String id) {
+        return spService.deleteSanpham(id);
     }
 
+    @PutMapping("/{id}")
+    public Sanpham updateSp(@PathVariable String id, @RequestBody Sanpham sp) {
+        return spService.updateSanpham(id, sp);
+    }
 
 }

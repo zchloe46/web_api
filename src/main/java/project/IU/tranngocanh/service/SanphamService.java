@@ -27,11 +27,27 @@ public class SanphamService {
         return spRepo.save(sp);
     }
 
+    public Sanpham updateSanpham(String id, Sanpham sanpham) {
+        // lay sanpham theo id
+        Sanpham sp = spRepo.findById(id).get();
+
+        if(sp == null) {
+            System.out.println("khong tim thay san pham");
+            return null;
+        }
+
+        // cap nhat thong tin san pham
+        sp.setTenSanPham(sanpham.getTenSanPham());
+        sp.setGia(sanpham.getGia());
+        sp.setHinhAnh(sanpham.getHinhAnh());
+        sp.setNamSanXuat(sanpham.getNamSanXuat());
+        sp.setHangSanXuat(sanpham.getHangSanXuat());
+
+        return spRepo.save(sp);
+    }
     // viet phuong thuc xoa san pham
-    public Sanpham deleteSanpham() {
-        Long id = 5L;
-        // find sanpham by id
-        Sanpham sanpham = spRepo.findById(id).orElse(null);
+    public Sanpham deleteSanpham(String id) {
+        Sanpham sanpham = spRepo.findById(id).get();
 
         if(sanpham == null) {
             System.out.println("khong tim thay san pham");

@@ -2,7 +2,7 @@
 server:
   port: 5005
   servlet:
-    context-path: /admin
+    context-path: /tranngocanh
 
 spring:
   application:
