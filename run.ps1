@@ -1,4 +1,4 @@
-git pull origin main --rebase
+# git pull origin main --rebase
 
 git add .
 git commit -m "updatejher"
